@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.Moreira Advogados & Associados</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  <!-- Hero Section -->
+  <header class="hero">
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+      <div class="logo">Advogados & Associados</div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#team">Equipe</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Excelência em Advocacia</h1>
+      <p>Defendendo seus direitos com ética, transparência e dedicação.</p>
+      <a href="#contact" class="cta-btn">Fale Conosco</a>
+      <a href="#services" class="cta-btn secondary">Conheça nossos serviços</a>
+    </div>
+    <div class="hero-bg"></div>
+  </header>
+
+  <!-- Trusted By Bar -->
+  <div class="trusted-bar">
+    <span>Confiado por:</span>
+    <img src="assets/logo1.png" alt="Logo 1" />
+    <img src="assets/logo2.png" alt="Logo 2" />
+    <img src="assets/logo3.png" alt="Logo 3" />
+  </div>
+
+  <!-- Algolia Search -->
+  <section class="search-section">
+    <div class="container search-bar-container">
+      <div class="search-bar-wrapper">
+        <input id="algolia-search" type="search" placeholder="Buscar serviços, advogados ou artigos...">
+        <button id="search-btn" type="button" aria-label="Buscar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>Somos um escritório de advocacia comprometido com a justiça e a satisfação de nossos clientes, atuando em diversas áreas do direito.</p>
+      <img src="assets/about.jpg" alt="Equipe do escritório" class="about-img">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2>Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="assets/service1.jpg" alt="Direito Civil">
+          <h3>Direito Civil</h3>
+          <p>Atuação em processos cíveis, contratos, responsabilidade civil e mais.</p>
+        </div>
+        <div class="service-card">
+          <img src="assets/service2.jpg" alt="Direito Trabalhista">
+          <h3>Direito Trabalhista</h3>
+          <p>Defesa dos direitos trabalhistas de empregados e empregadores.</p>
+        </div>
+        <div class="service-card">
+          <img src="assets/service3.jpg" alt="Direito Empresarial">
+          <h3>Direito Empresarial</h3>
+          <p>Consultoria e assessoria jurídica para empresas de todos os portes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team-section">
+    <div class="container">
+      <h2>Nossa Equipe</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="assets/lawyer1.jpg" alt="Dra. Ana Silva, Especialista em Direito Civil">
+          <h3>Dra. Ana Silva</h3>
+          <p>Especialista em Direito Civil</p>
+          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dra. Ana Silva" title="LinkedIn de Dra. Ana Silva">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
+          </a>
+        </div>
+        <div class="team-member">
+          <img src="assets/lawyer2.jpg" alt="Dr. João Souza, Especialista em Direito Trabalhista">
+          <h3>Dr. João Souza</h3>
+          <p>Especialista em Direito Trabalhista</p>
+          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dr. João Souza" title="LinkedIn de Dr. João Souza">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
+          </a>
+        </div>
+        <div class="team-member">
+          <img src="assets/lawyer3.jpg" alt="Dra. Maria Oliveira, Especialista em Direito Empresarial">
+          <h3>Dra. Maria Oliveira</h3>
+          <p>Especialista em Direito Empresarial</p>
+          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dra. Maria Oliveira" title="LinkedIn de Dra. Maria Oliveira">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2>Depoimentos</h2>
+      <div class="testimonials-slider">
+        <button class="testimonial-arrow left" aria-label="Anterior">&#8592;</button>
+        <div class="testimonials-grid">
+          <blockquote>
+            <img src="assets/client1.jpg" alt="Foto do Cliente 1" />
+            <p>"Profissionais competentes e atenciosos. Recomendo!"</p>
+            <footer>- Cliente 1</footer>
+          </blockquote>
+          <blockquote>
+            <img src="assets/client2.jpg" alt="Foto do Cliente 2" />
+            <p>"Excelente atendimento e resultados acima do esperado."</p>
+            <footer>- Cliente 2</footer>
+          </blockquote>
+          <blockquote>
+            <img src="assets/client3.jpg" alt="Foto do Cliente 3" />
+            <p>"Equipe dedicada e muito ética. Senti confiança desde o início."</p>
+            <footer>- Cliente 3</footer>
+          </blockquote>
+        </div>
+        <button class="testimonial-arrow right" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contato</h2>
+      <form class="contact-form" autocomplete="off" novalidate>
+        <div class="form-group">
+          <input type="text" name="name" id="name" required placeholder=" " />
+          <label for="name">Seu nome</label>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" id="email" required placeholder=" " />
+          <label for="email">Seu e-mail</label>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" required placeholder=" "></textarea>
+          <label for="message">Sua mensagem</label>
+        </div>
+        <button type="submit">Enviar</button>
+        <div class="form-feedback" aria-live="polite"></div>
+      </form>
+      <div class="contact-info">
+        <p><strong>Endereço:</strong> Av. Exemplo, 123 - Centro, Cidade</p>
+        <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        <p><strong>E-mail:</strong> contato@advogados.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-trust">Seu parceiro jurídico de confiança.</div>
+      <div class="footer-social-row">
+        <div class="social-icons">
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.28l.72-4H14V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="#" target="_blank">Política de Privacidade</a>
+          <a href="#" target="_blank">Termos de Uso</a>
+        </div>
+      </div>
+      <p>&copy; 2025 Advogados & Associados. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Voltar ao topo">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 
