@@ -1,209 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B.Moreira Advogados & Associados</title>
+  <title>Advocacia Profissional - Excelência em Direito</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <!-- Algolia -->
   <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.js"></script>
 </head>
 <body>
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-  <!-- Hero Section -->
-  <header class="hero">
-    <nav class="navbar" role="navigation" aria-label="Menu principal">
-      <div class="logo">Advogados & Associados</div>
-      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span class="hamburger"></span>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4 text-dark" href="#">
+        <i class="fas fa-balance-scale text-warning me-2"></i>
+        Advocacia Profissional
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#services">Serviços</a></li>
-        <li><a href="#team">Equipe</a></li>
-        <li><a href="#testimonials">Depoimentos</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <h1>Excelência em Advocacia</h1>
-      <p>Defendendo seus direitos com ética, transparência e dedicação.</p>
-      <a href="#contact" class="cta-btn">Fale Conosco</a>
-      <a href="#services" class="cta-btn secondary">Conheça nossos serviços</a>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="#equipe">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="#depoimentos">Depoimentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="hero-bg"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section position-relative d-flex align-items-center min-vh-100 text-white">
+    <div class="hero-overlay position-absolute w-100 h-100"></div>
+    <div class="container position-relative z-1">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10">
+          <h1 class="display-3 fw-bold mb-4">Excelência em Advocacia</h1>
+          <p class="lead fs-5 mb-5 opacity-90">Defendendo seus direitos com ética, transparência e dedicação profissional</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="#contato" class="btn btn-warning btn-lg fw-semibold px-4 py-3">
+              <i class="fas fa-phone me-2"></i>Fale Conosco
+            </a>
+            <a href="#servicos" class="btn btn-outline-light btn-lg fw-semibold px-4 py-3">
+              <i class="fas fa-gavel me-2"></i>Nossos Serviços
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Trusted By Bar -->
-  <div class="trusted-bar">
-    <span>Confiado por:</span>
-    <img src="assets/logo1.png" alt="Logo 1" />
-    <img src="assets/logo2.png" alt="Logo 2" />
-    <img src="assets/logo3.png" alt="Logo 3" />
-  </div>
-
-  <!-- Algolia Search -->
-  <section class="search-section">
-    <div class="container search-bar-container">
-      <div class="search-bar-wrapper">
-        <input id="algolia-search" type="search" placeholder="Buscar serviços, advogados ou artigos...">
-        <button id="search-btn" type="button" aria-label="Buscar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </button>
+  <!-- Trusted By Section -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 text-center">
+          <p class="text-muted mb-3 mb-md-0 me-md-4 d-inline-block">Confiado por:</p>
+          <div class="d-inline-flex align-items-center gap-4">
+            <img src="assets/logo1.png" alt="Cliente 1" class="trusted-logo">
+            <img src="assets/logo2.png" alt="Cliente 2" class="trusted-logo">
+            <img src="assets/logo3.png" alt="Cliente 3" class="trusted-logo">
+          </div>
+        </div>
       </div>
-      <div id="search-results"></div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="input-group input-group-lg shadow-sm">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="fas fa-search text-muted"></i>
+            </span>
+            <input type="search" class="form-control border-start-0" id="algolia-search" placeholder="Buscar serviços, advogados ou artigos...">
+          </div>
+          <div id="search-results" class="mt-3"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about-section">
+  <section id="sobre" class="py-5 bg-light">
     <div class="container">
-      <h2>Sobre Nós</h2>
-      <p>Somos um escritório de advocacia comprometido com a justiça e a satisfação de nossos clientes, atuando em diversas áreas do direito.</p>
-      <img src="assets/about.jpg" alt="Equipe do escritório" class="about-img">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="display-6 fw-bold text-dark mb-4">Sobre Nossa Advocacia</h2>
+          <p class="lead text-muted mb-4">Somos um escritório de advocacia comprometido com a justiça e a satisfação de nossos clientes, atuando em diversas áreas do direito com excelência e dedicação.</p>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle text-warning fs-5 me-3"></i>
+                <span class="fw-medium">Experiência</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle text-warning fs-5 me-3"></i>
+                <span class="fw-medium">Transparência</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle text-warning fs-5 me-3"></i>
+                <span class="fw-medium">Ética</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle text-warning fs-5 me-3"></i>
+                <span class="fw-medium">Resultados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/about.jpg" alt="Equipe do escritório" class="img-fluid rounded-3 shadow">
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services-section">
+  <section id="servicos" class="py-5 bg-white">
     <div class="container">
-      <h2>Serviços</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="assets/service1.jpg" alt="Direito Civil">
-          <h3>Direito Civil</h3>
-          <p>Atuação em processos cíveis, contratos, responsabilidade civil e mais.</p>
+      <div class="row text-center mb-5">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-6 fw-bold text-dark mb-3">Nossos Serviços</h2>
+          <p class="lead text-muted">Oferecemos soluções jurídicas completas e personalizadas para suas necessidades</p>
         </div>
-        <div class="service-card">
-          <img src="assets/service2.jpg" alt="Direito Trabalhista">
-          <h3>Direito Trabalhista</h3>
-          <p>Defesa dos direitos trabalhistas de empregados e empregadores.</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <div class="card-body text-center p-4">
+              <div class="service-icon mb-3">
+                <i class="fas fa-users text-warning fs-1"></i>
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-3">Direito Civil</h3>
+              <p class="text-muted mb-0">Atuação em processos cíveis, contratos, responsabilidade civil e mais.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-card">
-          <img src="assets/service3.jpg" alt="Direito Empresarial">
-          <h3>Direito Empresarial</h3>
-          <p>Consultoria e assessoria jurídica para empresas de todos os portes.</p>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <div class="card-body text-center p-4">
+              <div class="service-icon mb-3">
+                <i class="fas fa-briefcase text-warning fs-1"></i>
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-3">Direito Trabalhista</h3>
+              <p class="text-muted mb-0">Defesa dos direitos trabalhistas de empregados e empregadores.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <div class="card-body text-center p-4">
+              <div class="service-icon mb-3">
+                <i class="fas fa-building text-warning fs-1"></i>
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-3">Direito Empresarial</h3>
+              <p class="text-muted mb-0">Consultoria e assessoria jurídica para empresas de todos os portes.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section id="team" class="team-section">
+  <section id="equipe" class="py-5 bg-light">
     <div class="container">
-      <h2>Nossa Equipe</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="assets/lawyer1.jpg" alt="Dra. Ana Silva, Especialista em Direito Civil">
-          <h3>Dra. Ana Silva</h3>
-          <p>Especialista em Direito Civil</p>
-          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dra. Ana Silva" title="LinkedIn de Dra. Ana Silva">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
-          </a>
+      <div class="row text-center mb-5">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-6 fw-bold text-dark mb-3">Nossa Equipe</h2>
+          <p class="lead text-muted">Advogados especializados e comprometidos com seu caso</p>
         </div>
-        <div class="team-member">
-          <img src="assets/lawyer2.jpg" alt="Dr. João Souza, Especialista em Direito Trabalhista">
-          <h3>Dr. João Souza</h3>
-          <p>Especialista em Direito Trabalhista</p>
-          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dr. João Souza" title="LinkedIn de Dr. João Souza">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
-          </a>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm team-card text-center">
+            <div class="card-body p-4">
+              <div class="team-avatar mb-3">
+                <img src="assets/lawyer1.jpg" alt="Dra. Ana Silva" class="rounded-circle">
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-2">Dra. Ana Silva</h3>
+              <p class="text-muted mb-3">Especialista em Direito Civil</p>
+              <a href="#" class="btn btn-outline-primary btn-sm" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="team-member">
-          <img src="assets/lawyer3.jpg" alt="Dra. Maria Oliveira, Especialista em Direito Empresarial">
-          <h3>Dra. Maria Oliveira</h3>
-          <p>Especialista em Direito Empresarial</p>
-          <a href="#" class="linkedin-icon" aria-label="LinkedIn de Dra. Maria Oliveira" title="LinkedIn de Dra. Maria Oliveira">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z"></path></svg>
-          </a>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm team-card text-center">
+            <div class="card-body p-4">
+              <div class="team-avatar mb-3">
+                <img src="assets/lawyer2.jpg" alt="Dr. João Souza" class="rounded-circle">
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-2">Dr. João Souza</h3>
+              <p class="text-muted mb-3">Especialista em Direito Trabalhista</p>
+              <a href="#" class="btn btn-outline-primary btn-sm" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm team-card text-center">
+            <div class="card-body p-4">
+              <div class="team-avatar mb-3">
+                <img src="assets/lawyer3.jpg" alt="Dra. Maria Oliveira" class="rounded-circle">
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-2">Dra. Maria Oliveira</h3>
+              <p class="text-muted mb-3">Especialista em Direito Empresarial</p>
+              <a href="#" class="btn btn-outline-primary btn-sm" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials-section">
+  <section id="depoimentos" class="py-5 bg-white">
     <div class="container">
-      <h2>Depoimentos</h2>
-      <div class="testimonials-slider">
-        <button class="testimonial-arrow left" aria-label="Anterior">&#8592;</button>
-        <div class="testimonials-grid">
-          <blockquote>
-            <img src="assets/client1.jpg" alt="Foto do Cliente 1" />
-            <p>"Profissionais competentes e atenciosos. Recomendo!"</p>
-            <footer>- Cliente 1</footer>
-          </blockquote>
-          <blockquote>
-            <img src="assets/client2.jpg" alt="Foto do Cliente 2" />
-            <p>"Excelente atendimento e resultados acima do esperado."</p>
-            <footer>- Cliente 2</footer>
-          </blockquote>
-          <blockquote>
-            <img src="assets/client3.jpg" alt="Foto do Cliente 3" />
-            <p>"Equipe dedicada e muito ética. Senti confiança desde o início."</p>
-            <footer>- Cliente 3</footer>
-          </blockquote>
+      <div class="row text-center mb-5">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-6 fw-bold text-dark mb-3">Depoimentos</h2>
+          <p class="lead text-muted">O que nossos clientes dizem sobre nosso trabalho</p>
         </div>
-        <button class="testimonial-arrow right" aria-label="Próximo">&#8594;</button>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 col-md-10">
+                    <div class="card border-0 shadow-sm testimonial-card">
+                      <div class="card-body text-center p-5">
+                        <div class="testimonial-avatar mb-4">
+                          <img src="assets/client1.jpg" alt="Cliente 1" class="rounded-circle">
+                        </div>
+                        <blockquote class="mb-4">
+                          <p class="fs-5 text-muted fst-italic">"Profissionais competentes e atenciosos. Recomendo!"</p>
+                        </blockquote>
+                        <footer class="text-dark fw-semibold">- Cliente 1</footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 col-md-10">
+                    <div class="card border-0 shadow-sm testimonial-card">
+                      <div class="card-body text-center p-5">
+                        <div class="testimonial-avatar mb-4">
+                          <img src="assets/client2.jpg" alt="Cliente 2" class="rounded-circle">
+                        </div>
+                        <blockquote class="mb-4">
+                          <p class="fs-5 text-muted fst-italic">"Excelente atendimento e resultados acima do esperado."</p>
+                        </blockquote>
+                        <footer class="text-dark fw-semibold">- Cliente 2</footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 col-md-10">
+                    <div class="card border-0 shadow-sm testimonial-card">
+                      <div class="card-body text-center p-5">
+                        <div class="testimonial-avatar mb-4">
+                          <img src="assets/client3.jpg" alt="Cliente 3" class="rounded-circle">
+                        </div>
+                        <blockquote class="mb-4">
+                          <p class="fs-5 text-muted fst-italic">"Equipe dedicada e muito ética. Senti confiança desde o início."</p>
+                        </blockquote>
+                        <footer class="text-dark fw-semibold">- Cliente 3</footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
+  <section id="contato" class="py-5 bg-light">
     <div class="container">
-      <h2>Contato</h2>
-      <form class="contact-form" autocomplete="off" novalidate>
-        <div class="form-group">
-          <input type="text" name="name" id="name" required placeholder=" " />
-          <label for="name">Seu nome</label>
+      <div class="row text-center mb-5">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-6 fw-bold text-dark mb-3">Entre em Contato</h2>
+          <p class="lead text-muted">Estamos aqui para ajudar com suas questões jurídicas</p>
         </div>
-        <div class="form-group">
-          <input type="email" name="email" id="email" required placeholder=" " />
-          <label for="email">Seu e-mail</label>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <form class="contact-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-medium">Nome</label>
+                  <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-medium">E-mail</label>
+                  <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                </div>
+                <div class="mb-4">
+                  <label for="message" class="form-label fw-medium">Mensagem</label>
+                  <textarea class="form-control form-control-lg" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg w-100 fw-semibold">
+                  <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                </button>
+                <div class="form-feedback mt-3" aria-live="polite"></div>
+              </form>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="contact-info">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="contact-icon me-3">
+                    <i class="fas fa-map-marker-alt text-warning fs-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="h6 fw-bold text-dark mb-1">Endereço</h4>
+                    <p class="text-muted mb-0">Av. Exemplo, 123 - Centro, Cidade</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                  <div class="contact-icon me-3">
+                    <i class="fas fa-phone text-warning fs-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="h6 fw-bold text-dark mb-1">Telefone</h4>
+                    <p class="text-muted mb-0">(11) 1234-5678</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                  <div class="contact-icon me-3">
+                    <i class="fas fa-envelope text-warning fs-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="h6 fw-bold text-dark mb-1">E-mail</h4>
+                    <p class="text-muted mb-0">contato@advogados.com</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon me-3">
+                    <i class="fas fa-clock text-warning fs-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="h6 fw-bold text-dark mb-1">Horário de Atendimento</h4>
+                    <p class="text-muted mb-0">Segunda a Sexta: 8h às 18h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <textarea name="message" id="message" required placeholder=" "></textarea>
-          <label for="message">Sua mensagem</label>
-        </div>
-        <button type="submit">Enviar</button>
-        <div class="form-feedback" aria-live="polite"></div>
-      </form>
-      <div class="contact-info">
-        <p><strong>Endereço:</strong> Av. Exemplo, 123 - Centro, Cidade</p>
-        <p><strong>Telefone:</strong> (11) 1234-5678</p>
-        <p><strong>E-mail:</strong> contato@advogados.com</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
     <div class="container">
-      <div class="footer-trust">Seu parceiro jurídico de confiança.</div>
-      <div class="footer-social-row">
-        <div class="social-icons">
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
-          </a>
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.28l.72-4H14V7a1 1 0 0 1 1-1h3z"></path></svg>
-          </a>
-        </div>
-        <div class="footer-links">
-          <a href="#" target="_blank">Política de Privacidade</a>
-          <a href="#" target="_blank">Termos de Uso</a>
+      <div class="row text-center">
+        <div class="col-12">
+          <div class="mb-4">
+            <h3 class="h5 fw-bold mb-3">Advocacia Profissional</h3>
+            <p class="text-muted mb-4">Excelência em advocacia com ética e transparência</p>
+          </div>
+          
+          <div class="d-flex justify-content-center gap-3 mb-4">
+            <a href="#" class="btn btn-outline-light btn-sm">Política de Privacidade</a>
+            <a href="#" class="btn btn-outline-light btn-sm">Termos de Uso</a>
+          </div>
+          
+          <div class="social-icons d-flex justify-content-center gap-3 mb-4">
+            <a href="https://instagram.com" class="btn btn-outline-warning" title="Instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" class="btn btn-outline-warning" title="Facebook" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://linkedin.com" class="btn btn-outline-warning" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          
+          <hr class="my-4">
+          <p class="text-muted mb-0">&copy; 2024 Advocacia Profissional. Todos os direitos reservados.</p>
         </div>
       </div>
-      <p>&copy; 2025 Advogados & Associados. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <button class="back-to-top" aria-label="Voltar ao topo">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-  </button>
 
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
   <script src="js/main.js"></script>
 </body>
 </html> 

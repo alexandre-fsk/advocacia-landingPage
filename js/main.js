@@ -257,34 +257,4 @@ socialLinks.forEach(link => {
   link.addEventListener('focus', function() {
     this.setAttribute('title', this.getAttribute('aria-label'));
   });
-});
-
-// Back to top button logic
-const backToTopBtn = document.querySelector('.back-to-top');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    backToTopBtn && backToTopBtn.classList.add('show');
-  } else {
-    backToTopBtn && backToTopBtn.classList.remove('show');
-  }
-});
-if (backToTopBtn) {
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    backToTopBtn.blur();
-  });
-}
-
-// Search button triggers Algolia search
-const searchBtn = document.getElementById('search-btn');
-const searchInput = document.getElementById('algolia-search');
-if (searchBtn && searchInput) {
-  searchBtn.addEventListener('click', () => {
-    if (searchInput.value.trim()) {
-      const event = new Event('input', { bubbles: true });
-      searchInput.dispatchEvent(event);
-    } else {
-      searchInput.focus();
-    }
-  });
-} 
+}); 
